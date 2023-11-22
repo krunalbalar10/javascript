@@ -1,0 +1,5 @@
+Write a programe to findout area of triangle 
+
+Write a programe to findout simple intrest 
+
+Write a programe to peform swap 

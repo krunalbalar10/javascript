@@ -3,3 +3,7 @@ Write a programe to findout area of triangle
 Write a programe to findout simple intrest 
 
 Write a programe to peform swap 
+
+Write a programe to findout greater number out of given 3 numbers
+
+Write a programe to findout wether the given year is leap year or not 

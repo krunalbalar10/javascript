@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example of document.write()</title>
+</head>
+<body>
+
+   
+    <script>
+        var age = parseInt(prompt("Enter Your age "));
+        console.log("The value of age is " + age);
+
+        if(age < 18)
+        {
+            document.write("<h2>User is not eligible</h2>");
+        }
+    //  document.write() method is a powerful JavaScript feature that allows developers to 
+    //  write HTML or plain text directly to the webpage.
+
+        else
+        {
+            document.write("User is eligible");
+        }
+    </script>
+</body>
+</html>

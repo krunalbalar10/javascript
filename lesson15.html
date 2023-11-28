@@ -1,13 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-        
+        // Write a programe to findout wether the given input is number or charater 
+        var data = prompt("Enter value of data ");
+
+        console.log("Te value of data is " + data);
+
+        console.log(isNaN(data));
+        // isNaN() method returns true if a value is Not-a-Number. Number. isNaN() returns true if a number is Not-a-Number.
+
+        if (isNaN(data) == true) {
+            console.log("Given input is character");
+        }
+
+        else {
+            console.log("Given input is number");
+        }
+
     </script>
 </body>
+
 </html>

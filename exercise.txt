@@ -9,3 +9,10 @@ Write a programe to findout greater number out of given 3 numbers
 Write a programe to findout wether the given year is leap year or not 
 
 Write a programe to findout wether the given input is number or charater 
+
+create web page using bootstrap and javascript that will display multiplication 
+table dynamically of given range. 
+start = 1 
+stop  = 10
+display card for each multiplication table. display 4 such card for large screen,
+3 card for medium screen and 2 card for small screen and 1 card for mobile

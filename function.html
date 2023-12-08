@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @media print{
+            .hide-in-print{
+                display: none;
+            }
+        }
+
+
+        td {
+            padding: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <form action="" >
+        <table class="table-border" align="center" border="2" width="50%">
+            <tr>
+                <td align="center" colspan="2">
+                    <font size="5rem">School Name</font>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" colspan="2">
+                    
+                    Annual Result 2022-2023
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Student Name:
+                </td>
+                <td>
+                    <input type="name" placeholder="Enter Student name" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Father's Name:
+                </td>
+                <td>
+                    <input type="name" placeholder="Enter Student name" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Mother's Name:
+                </td>
+                <td>
+                    <input type="name" placeholder="Enter Student name" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Date of Birth:
+                </td>
+                <td>
+                    <input type="date" id="date" placeholder="Date of Birth" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Address:
+                </td>
+                <td>
+                    <textarea name="address" id="" cols="30" rows="5"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>Subject Marks</td>
+                <td>
+                    <table border="1">
+                        <tr>
+                            <td>90</td>
+                            <td>85</td>
+                            <td>92</td>
+                            <td>78</td>
+                            <td>88</td>
+                            <td>95</td>
+                            <td>80</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td>450</td>
+            </tr>
+            <tr>
+                <td>Average</td>
+                <td>75</td>
+            </tr>
+            <tr>
+                <td>Grade</td>
+                <td>A+</td>
+            </tr>
+
+        </table>
+    </form>
+    <p align="center">
+        <button class="hide-in-print" type="button" id="print" onclick="PrintPage();">Print</button>
+    </p>
+    <script>
+        // get date
+        var date = new Date();
+        document.getElementById("date").value = date.toDateString();
+        // or
+        // $("date").value = date.toDateString();
+
+        // create function
+
+        let PrintPage = function(){
+            window.print();
+        }
+    </script>
+</body>
+
+</html>

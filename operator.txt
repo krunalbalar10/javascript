@@ -1,0 +1,19 @@
+Arithmatic operator
+
++ , - , * , /
+ 
+Unary operator
+
+a++ , a-- , ++a , --a
+
+Assignment operator
+
+= , += , -= , *= , %= , **=
+
+comparision oparator
+
+== , === , != , !== , > , >= , < , <=
+
+Logical oparator
+
+&& (logical end) , || (logical or) , ! (logical not)

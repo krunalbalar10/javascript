@@ -17,3 +17,7 @@ comparision oparator
 Logical oparator
 
 && (logical end) , || (logical or) , ! (logical not)
+
+--------------------------------------------------------------------------------
+
+for-of loop

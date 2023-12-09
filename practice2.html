@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for-of Loop/for-in loop</title>
+</head>
+<body>
+    <script>
+        // for-of loop
+        let string = "BalarKrunal";
+
+        for (let i of string){
+            console.log("i = ", i);
+        }
+
+        // for-in loop
+        let student = {
+            name: "Krunal Balar",
+            age: 23,
+            cgpa: 7.1,
+            isPass: true,
+        };
+
+        for(let key in student)
+        {
+            console.log("Key = " , key , " value = " , student[key]);
+        }
+
+
+    </script>
+</body>
+</html>

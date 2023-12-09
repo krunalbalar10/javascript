@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <style>
+         @media print{
+            .hide-in-print{
+                display: none;
+            }
+        }
+        input{
+            margin: 10px;
+        }
+        select{
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 align="center">Payment Form</h2>
+    <hr width="30%">
+    <div align="center">
+
+    <form action="submit_payment.php" method="post">
+        <!-- Customer Name -->
+        <label for="customerName">Customer Name:</label>
+        <input type="text" id="customerName" name="customerName" required>
+
+        <br>
+
+        <!-- Bill Number -->
+        <label for="billNumber">Bill Number:</label>
+        <input type="text" id="billNumber" name="billNumber" required>
+
+        <br>
+
+        <!-- Transaction ID -->
+        <label for="transactionID">Transaction ID:</label>
+        <input type="text" id="transactionID" name="transactionID" required>
+
+        <br>
+
+        <!-- Paying Method (UPI) -->
+        <label for="payingMethod">Paying Method (UPI):</label>
+        <input type="text" id="payingMethod" name="payingMethod" required>
+
+        <br>
+
+        <!-- Transaction Type -->
+        <label for="transactionType">Transaction Type:</label>
+        <select id="transactionType" name="transactionType" required>
+            <option value="purchase">Purchase</option>
+            <option value="refund">Refund</option>
+            <!-- Add more options if needed -->
+        </select>
+
+        <br>
+
+        <!-- Bill Amount -->
+        <label for="billAmount">Bill Amount:</label>
+        <input type="number" id="billAmount" name="billAmount" required>
+
+        <br>
+
+        <!-- Due Date of Payment -->
+        <label for="dueDate">Due Date of Payment:</label>
+        <input type="date" id="dueDate" name="dueDate" required>
+
+        <br>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Submit">
+    </form>
+    <hr width="30%">
+    <button type="button" id="printform" class="hide-in-print" value="print" onclick="PrintPage();">Print</button>
+</div>
+
+<script>
+
+    let PrintPage = function(){
+        window.print();
+    }
+</script>
+</body>
+</html>

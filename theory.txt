@@ -35,3 +35,11 @@ str.slice(start, end?)-------(Returns part of string)
 str1.concat(str2)------------(joins str2 with str2)
 str3.replace(searchVal, newVal)
 str.chartAt(idx)
+
+--------------------------------------------------------------------------------------
+
+string are immutable means we can not change the value of original string variable, 
+we have to create new variable for that
+
+array are mutable means we can change the value of original string variable, 
+and print the old value to new vakue in same variable

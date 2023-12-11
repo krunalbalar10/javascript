@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let gameNum = 25;
+        let userNum = parseInt(prompt("Guess the number : "));
+        
+        while(userNum != gameNum){ 
+            // number jya sudhi match na thay tya sudhi loop chalya rakhe etle oparator use kryu (!=)
+            userNum = prompt("You have entered the wrong number, please guess again!");
+        }
+
+        console.log("Congratulations , You have entered the right number.");
+
+        // length of string variable by using str.length
+
+        let str = "Apna\tcollege";  
+        console.log(str.length);
+        // \t used for space and \n used for new line between two words in " "
+
+        let str1 = "hello";
+        console.log(str1.replace("hello", "krunal"));
+
+    </script>
+</body>
+</html>

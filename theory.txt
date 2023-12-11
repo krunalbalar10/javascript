@@ -19,5 +19,19 @@ Logical oparator
 && (logical end) , || (logical or) , ! (logical not)
 
 --------------------------------------------------------------------------------
+type of loop in java
 
 for-of loop
+for-in loop
+for loop
+while loop
+do-while loop
+
+-----------------------------------------------------------------------------------
+
+string methods in JS
+
+str.slice(start, end?)-------(Returns part of string)
+str1.concat(str2)------------(joins str2 with str2)
+str3.replace(searchVal, newVal)
+str.chartAt(idx)

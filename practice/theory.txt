@@ -43,3 +43,7 @@ we have to create new variable for that
 
 array are mutable means we can change the value of original string variable, 
 and print the old value to new vakue in same variable
+
+--------------------------------------------------------------------------------
+
+Function in java => Block of code that  performs a specific task, can be invoked whenever needed

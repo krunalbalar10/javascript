@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let zoomIn = function(imagId)
+        {
+            console.log("Zoom in event triggered", imagId);
+        }
+
+        let zoomOut = function(imagId)
+        {
+            console.log("Zoom out event triggered", imagId);
+        }
+    </script>
+
+    <table border="2" cellpadding="5" width="50%" align="center">
+        <tr>
+            <td><img id="album1" onmouseover="zoomIn(this.id)" onmouseleave="zoomOut(this.id)" src="http://picsum.photos/200/201" alt=""></td>
+            <td><img id="album2" onmouseover="zoomIn(this.id)" onmouseleave="zoomOut(this.id)" src="http://picsum.photos/200/202" alt=""></td>
+            <td><img id="album3" onmouseover="zoomIn(this.id)" onmouseleave="zoomOut(this.id)" src="http://picsum.photos/200/203" alt=""></td>
+        </tr>
+        <tr>
+            <td><img id="album4" onmouseover="zoomIn(this.id)" onmouseleave="zoomOut(this.id)" src="http://picsum.photos/200/204" alt=""></td>
+            <td><img id="album5" onmouseover="zoomIn(this.id)" onmouseleave="zoomOut(this.id)" src="http://picsum.photos/200/205" alt=""></td>
+            <td><img id="album6" onmouseover="zoomIn(this.id)" onmouseleave="zoomOut(this.id)" src="http://picsum.photos/200/206" alt=""></td>
+        </tr>
+        <tr>
+            <td><img id="album7" onmouseover="zoomIn(this.id)" onmouseleave="zoomOut(this.id)" src="http://picsum.photos/200/207" alt=""></td>
+            <td><img id="album8" onmouseover="zoomIn(this.id)" onmouseleave="zoomOut(this.id)" src="http://picsum.photos/200/208" alt=""></td>
+            <td><img id="album9" onmouseover="zoomIn(this.id)" onmouseleave="zoomOut(this.id)" src="http://picsum.photos/200/209" alt=""></td>
+        </tr>
+    </table>
+
+    <script>
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!-- Create a function using the function keyword that takes a string as an argument and 
+returns the number of vowels in the string -->
+<!-- create a arrow function of vowels in the string
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+    
+        function countVowel(str) {
+            let count = 0;
+            for (let char of str) {
+                if (char === "a" || char === "i" || char === "o" || char === "e" || char === "u") {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+
+        // arrow function
+        let countVow = (str) => {
+            let count = 0;
+            for (let char of str) {
+                if (char === "a" || char === "i" || char === "o" || char === "e" || char === "u") {
+                    count++;
+                }
+            }
+            return count;
+        }
+    </script>
+</body>
+
+</html>

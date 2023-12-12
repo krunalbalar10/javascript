@@ -47,3 +47,8 @@ and print the old value to new vakue in same variable
 --------------------------------------------------------------------------------
 
 Function in java => Block of code that  performs a specific task, can be invoked whenever needed
+
+what is higher order Function?
+the higher oreder function or higher order methods in javascript are methods that either take another Function
+as a parameter inside them  and they return another function as their output
+(when you see the callback function in java it will be known as higher order function)

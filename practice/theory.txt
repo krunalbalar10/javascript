@@ -52,3 +52,20 @@ what is higher order Function?
 the higher oreder function or higher order methods in javascript are methods that either take another Function
 as a parameter inside them  and they return another function as their output
 (when you see the callback function in java it will be known as higher order function)
+
+arry methods
+1. arr.map(callbackfnx(value,index,arry))
+
+let newarr = arr.map((val) => {
+    return val * 2;
+})
+
+2. arr.filter(used for when giving condition)
+
+let newarr = arrfilter((val) => {
+    return val % 2 === 0;
+})
+
+3.reduce
+
+performs some operation and reduces the array to a single value.It reurns that single value.

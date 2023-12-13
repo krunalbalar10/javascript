@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n = prompt("Enter number : ");
+
+        let array = [];
+
+        for (let i = 0; i <= n; i++)
+        {
+            array[i-1] = i;
+        }
+        console.log(array);
+
+        let sum = array.reduce((result , current) => {
+             return result + current;
+        })
+
+        console.log("Sum = ", sum);
+
+        let factorial = array.reduce((res , curr) => {
+             return res * curr;
+        })
+
+        console.log("Factorial = ", factorial);
+    </script>
+    
+</body>
+</html>

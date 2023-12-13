@@ -7,6 +7,22 @@
     <style>
         td{
             text-align: center;
+            height: 300px;
+            padding-left: 50px;
+            padding-right: 50px;
+
+        }
+
+        .zoom-in{
+            height: 250px;
+            width: 250px;
+            box-shadow: 5px 5px 5px black;
+        }
+
+        .zoom-out{
+            height: 200px;
+            width: 200px;
+            box-shadow: none;
         }
     </style>
 </head>
@@ -15,11 +31,13 @@
         let zoomIn = function(imagId)
         {
             console.log("Zoom in event triggered", imagId);
+            document.getElementById(imagId).className = "zoom-in";
         }
 
         let zoomOut = function(imagId)
         {
             console.log("Zoom out event triggered", imagId);
+            document.getElementById(imagId).className = "zoom-out";
         }
     </script>
 

@@ -1,83 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>event handling 2nd technique</title>
+    <title>Tic Tac Toe</title>
     <style>
         td {
             text-align: center;
         }
 
-        td>input {
+        input {
             font-size: xx-large;
             color: chocolate;
             height: 50px;
             width: 50px;
         }
-
-        #winner
-        {
-            background-color: black;
-            font-size: small;
-            height: 30px;
-            width: 80px;
-        }
-
-        
     </style>
+
 </head>
-
 <body>
-    <table border="2" cellpadding="20" align="center">
+    <table border="1" cellpadding="10" align="center">
         <tr>
-            <td><input id="box1" value="-" type="button"></td>
-            <td><input id="box2" value="-" type="button"></td>
-            <td><input id="box3" value="-" type="button"></td>
+            <td><input type="button" id="1" value="-" /></td>
+            <td><input type="button" id="2" value="-" /></td>
+            <td><input type="button" id="3" value="-" /></td>
         </tr>
         <tr>
-            <td><input id="box4" value="-" type="button"></td>
-            <td><input id="box5" value="-" type="button"></td>
-            <td><input id="box6" value="-" type="button"></td>
+            <td><input type="button" id="4" value="-" /></td>
+            <td><input type="button" id="5" value="-" /></td>
+            <td><input type="button" id="6" value="-" /></td>
         </tr>
         <tr>
-            <td><input id="box7" value="-" type="button"></td>
-            <td><input id="box8" value="-" type="button"></td>
-            <td><input id="box9" value="-" type="button"></td>
-        </tr>
-        <tr>
-            <td colspan="3">
-
-                <input id="winner" type="submit" value="submit" onclick="return winnerplayer()">
-            </td>
+            <td><input type="button" id="7" value="-" /></td>
+            <td><input type="button" id="8" value="-" /></td>
+            <td><input type="button" id="9" value="-" /></td>
         </tr>
     </table>
     <script>
-        let button = document.getElementsByTagName("input");//return list(array) of html tag whose name is input
+        // Function to check for a winner
+        function checkWinner() {
+            const patterns = [
+                [1, 2, 3],
+                [4, 5, 6],
+                [7, 8, 9],
+                [1, 4, 7],
+                [2, 5, 8],
+                [3, 6, 9],
+                [1, 5, 9],
+                [3, 5, 7]
+            ];
 
-        console.log(button);
+            for (const pattern of patterns) {
+                const [a, b, c] = pattern;
+                if (
+                    buttons[a - 1].value !== '-' &&
+                    buttons[a - 1].value === buttons[b - 1].value &&
+                    buttons[b - 1].value === buttons[c - 1].value
+                ) {
+                    return true;
+                }
+            }
+            return false;
+        }
 
-        let size = button.length;
-        console.log("length of button array = ", size);
-
+        let buttons = document.getElementsByTagName("input");
+        let size = buttons.length;
         let symbol = 'X';
 
         for (let index = 0; index < size; index++) {
-            button[index].onclick = function(){
+            buttons[index].onclick = function () {
                 this.value = symbol;
 
-                if (symbol === 'X')
-                    symbol = '0';
-                else
+                if (checkWinner()) {
+                    alert(`Player ${symbol} wins!`);
+                    location.reload(); // Reload the page to start a new game
+                }
+
+                if (symbol === 'X') {
+                    symbol = 'O';
+                } else {
                     symbol = 'X';
+                }
+
                 this.onclick = null;
             };
         }
-
-       
     </script>
-
 </body>
-
 </html>

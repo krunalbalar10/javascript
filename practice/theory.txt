@@ -87,3 +87,4 @@ document.getElementByClassName("myClass")
 3)selecting with tag
 document.getElementByTagName("part")
 
+4)

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second method object</title>
+</head>
+
+<body>
+    <h1>2nd method of creating object</h1>
+    <hr />
+    <b>use console, press (ctrl+shift+k)</b>
+    <table border="2" cellpadding="10" align="center">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Age</td>
+                <td>Weight</td>
+                <td>Gender</td>
+            </tr>
+        </thead>
+        <tbody id="output">
+            
+        </tbody>
+    </table>
+    <script>
+        var student = new Object({
+            name: '',
+            age: 0,
+            weight: 0.0,
+            gender: false,
+
+            display: function () {
+                console.log("Name = " + this.name + " Age = " + this.age + " weight = " + this.weight + " Gender = ",
+                    (this.gender == false) ? "female" : "male")
+
+                let temp;
+
+                if (this.gender === false)
+                    temp = "female";
+                else
+                    temp = "male";
+
+                var tr = `<tr>
+                                 <td>${this.name}</td>
+                                 <td>${this.age}</td>
+                                 <td>${this.weight}</td>
+                                 <td>${temp}</td>
+                             </tr>`;
+
+                document.getElementById("output").innerHTML += tr;
+
+            }
+        })
+        //var object-variable-name = Object 
+        var std1 = student;
+        //set properties using object variable name
+
+        std1.name = "Krunal";
+        std1.age = 23;
+        std1.weight = 54;
+        std1.gender = true;
+        //call method using object variable name 
+        std1.display();
+
+
+        //var object-variable-name = Object 
+        var std2 = student;
+
+        std2.name = "hina";
+        std2.age = 24;
+        std2.weight = 52;
+        std2.gender = false;
+
+        std2.display();
+        
+    </script>
+</body>
+
+</html>

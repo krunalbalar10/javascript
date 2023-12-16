@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .row {
+            display: flex;
+            justify-content: space-between;
+            
+        }
+
+        .colimage
+        {
+            width: 300px;
+        height: 300px;
+        overflow: hidden;
+        margin: 0 auto;
+        }
+
+        .colimage img{
+            width: 100%;
+            transition: 0.5s all ease-in-out;
+        }
+
+        .colimage:hover img{
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        let zoomIn = function (imageId) {
+            console.log("Zoom in ", imageId);
+        }
+
+        let zoomOut = function(imagId){
+            console.log("Zoom out ", imagId);
+        }
+    </script>
+    <table width="100%" align="center" >
+        <tr class="row">
+            <td class="colimage"><img id="image1" onmouseover="zoomIn(this.id)" onmouseleave="zoomOut(this.id)"
+                    src="https://picsum.photos/200/201" alt=""></td>
+            <td class="colimage"><img id="image2" onmouseover="zoomIn(this.id)" onmouseleave="zoomOut(this.id)"
+                    src="https://picsum.photos/200/202" alt=""></td>
+            <td class="colimage"><img id="image3" onmouseover="zoomIn(this.id)" onmouseleave="zoomOut(this.id)"
+                    src="https://picsum.photos/200/203" alt=""></td>
+        </tr>
+        <tr class="row">
+            <td class="colimage"><img id="image4" onmouseover="zoomIn(this.id)" onmouseleave="zoomOut(this.id)"
+                    src="https://picsum.photos/200/204" alt=""></td>
+            <td class="colimage"><img id="image5" onmouseover="zoomIn(this.id)" onmouseleave="zoomOut(this.id)"
+                    src="https://picsum.photos/200/205" alt=""></td>
+            <td class="colimage"><img id="image6" onmouseover="zoomIn(this.id)" onmouseleave="zoomOut(this.id)"
+                    src="https://picsum.photos/200/206" alt=""></td>
+        </tr>
+        <tr class="row">
+            <td class="colimage"><img id="image7" onmouseover="zoomIn(this.id)" onmouseleave="zoomOut(this.id)"
+                    src="https://picsum.photos/200/207" alt=""></td>
+            <td class="colimage"><img id="image8" onmouseover="zoomIn(this.id)" onmouseleave="zoomOut(this.id)"
+                    src="https://picsum.photos/200/208" alt=""></td>
+            <td class="colimage"><img id="image9" onmouseover="zoomIn(this.id)" onmouseleave="zoomOut(this.id)"
+                    src="https://picsum.photos/200/209" alt=""></td>
+        </tr>
+        <tr class="row">
+            <td class="colimage"><img id="image10" onmouseover="zoomIn(this.id)" onmouseleave="zoomOut(this.id)"
+                    src="https://picsum.photos/200/210" alt=""></td>
+            <td class="colimage"><img id="image11" onmouseover="zoomIn(this.id)" onmouseleave="zoomOut(this.id)"
+                    src="https://picsum.photos/200/211" alt=""></td>
+            <td class="colimage"><img id="image12" onmouseover="zoomIn(this.id)" onmouseleave="zoomOut(this.id)"
+                    src="https://picsum.photos/200/212" alt=""></td>
+        </tr>
+        <tr class="row">
+            <td class="colimage"><img id="image13" onmouseover="zoomIn(this.id)" onmouseleave="zoomOut(this.id)"
+                    src="https://picsum.photos/200/213" alt=""></td>
+            <td class="colimage"><img id="image14" onmouseover="zoomIn(this.id)" onmouseleave="zoomOut(this.id)"
+                    src="https://picsum.photos/200/214" alt=""></td>
+            <td class="colimage"><img id="image15" onmouseover="zoomIn(this.id)" onmouseleave="zoomOut(this.id)"
+                    src="https://picsum.photos/200/215" alt=""></td>
+        </tr>
+    </table>
+    <script>
+
+    </script>
+</body>
+
+</html>

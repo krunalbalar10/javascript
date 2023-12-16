@@ -62,10 +62,28 @@ let newarr = arr.map((val) => {
 
 2. arr.filter(used for when giving condition)
 
-let newarr = arrfilter((val) => {
+let newarr = arr.filter((val) => {
     return val % 2 === 0;
 })
 
 3.reduce
 
 performs some operation and reduces the array to a single value.It reurns that single value.
+
+----------------------------------------------------------------------------------------
+DOM(Document object model)
+
+window object = represent an open window in browser. It is  browser's object(not javascript) and 
+                is automatically created by browser.
+  - it is global object
+
+=>DOM manipulation
+1) selecting with id
+document.getElementById("myId")
+
+2)Selecting with classname
+document.getElementByClassName("myClass")
+
+3)selecting with tag
+document.getElementByTagName("part")
+

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td{
+            text-align: center;
+        }
+        input{
+            height: 50px;
+            width: 50px;
+            color: cadetblue;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <table border="2" align="center">
+        <tr>
+            <td><input type="button" id="1" value="-"></td>
+            <td><input type="button" id="2" value="-"></td>
+            <td><input type="button" id="3" value="-"></td>
+            <td><input type="button" id="4" value="-"></td>
+        </tr>
+        <tr>
+            <td><input type="button" id="5" value="-"></td>
+            <td><input type="button" id="6" value="-"></td>
+            <td><input type="button" id="7" value="-"></td>
+            <td><input type="button" id="8" value="-"></td>
+        </tr>
+        <tr>
+            <td><input type="button" id="9" value="-"></td>
+            <td><input type="button" id="10" value="-"></td>
+            <td><input type="button" id="11" value="-"></td>
+            <td><input type="button" id="12" value="-"></td>
+        </tr>
+        <tr>
+            <td><input type="button" id="13" value="-"></td>
+            <td><input type="button" id="14" value="-"></td>
+            <td><input type="button" id="15" value="-"></td>
+            <td><input type="button" id="16" value="-"></td>
+        </tr>
+    </table>
+    <script>
+        let buttons = document.getElementsByTagName("input");
+        console.log(buttons);
+
+        let size = buttons.length;
+        console.log(size);
+
+        let symbol = "X";
+
+        for(let index = 0; index < size; index++){
+            buttons[index].onclick = function(){
+                console.log(buttons[index]);
+
+                this.value = symbol;
+
+                if(symbol === "X")
+                   symbol = "0";
+                else
+                    symbol = "X";
+
+                    this.onclick = null;
+
+                console.log(symbol);
+            }
+        }
+    </script>
+</body>
+</html>

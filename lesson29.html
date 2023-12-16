@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        First method of creating object
+    </h1>
+    <hr>
+    <b>
+        Use console press(control + shift +k)
+    </b>
+
+    <script>
+        var myMath = {
+            num1: 0,
+            num2: 0,
+
+            add:function()
+            {
+                let result  = this.num1 + this.num2;
+                console.log("addition", result);
+            },
+
+            sub:function()
+            {
+                let result = this.num1 - this.num2;
+                console.log("substraction", result);
+            },
+
+            mult:function()
+            {
+                let result = this.num1 * this.num2;
+                console.log("Multiplication", result);
+            },
+
+            div:function()
+            {
+                let result = this.num1 / this.num2;
+                console.log("Division", result);
+            }
+        }
+        // set properties
+        myMath.num1 = 100;
+        myMath.num2 = 30;
+
+        // call methods
+        myMath.add();
+        myMath.sub();
+        myMath.mult();
+        myMath.div();
+    </script>
+</body>
+</html>

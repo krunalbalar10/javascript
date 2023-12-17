@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Team Statistics</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ccc;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>IPL Team Statistics</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Team Name</th>
+                <th>No. of Matches</th>
+                <th>Wins</th>
+                <th>Losses</th>
+                <th>Points</th>
+                <th>Final</th>
+            </tr>
+        </thead>
+        <tbody id="output">
+
+        </tbody>
+    </table>
+    <script>
+        var team = new Object({
+            teamName: '',
+            matches: 0,
+            winMatches: 0,
+            lossMatches: 0,
+            poitns: 0,
+            final: true,
+
+            display: function () {
+                console.log("Team Name = " + this.teamName + " \nMatches = " + this.matches + " \nWins = " + this.winMatches
+                    + " \nLosses = " + this.lossMatches + " \nPoitns = " + this.poitns + " \nFinal = ", (this.final === true) ? "win" : "loss");
+
+                let value;
+                if (this.final === true)
+                    value = "win";
+                else
+                    value = "loss";
+                var result = `<tr>
+                                 <td>${this.teamName}</td>
+                                 <td>${this.matches}</td>
+                                 <td>${this.winMatches}</td>
+                                 <td>${this.lossMatches}</td>
+                                 <td>${this.poitns}</td>
+                                 <td>${value}</td>
+                             </tr>`;
+
+                document.getElementById("output").innerHTML += result;
+
+            }
+
+        });
+
+        var T1 = team;
+        T1.teamName = "Mumbai Indians";
+        T1.matches = 14;
+        T1.winMatches = 5;
+        T1.lossMatches = 2;
+        T1.poitns = T1.winMatches * 2;
+        T1.final = true;
+
+        team.display();
+    </script>
+</body>
+
+</html>

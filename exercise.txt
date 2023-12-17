@@ -16,3 +16,7 @@ start = 1
 stop  = 10
 display card for each multiplication table. display 4 such card for large screen,
 3 card for medium screen and 2 card for small screen and 1 card for mobile
+
+
+create object 2nd method that store ipl team name, no of match, wins, loss, point 
+create objects to display all time as table 

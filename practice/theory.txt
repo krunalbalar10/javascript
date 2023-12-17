@@ -87,4 +87,13 @@ document.getElementByClassName("myClass")
 3)selecting with tag
 document.getElementByTagName("part")
 
-4)
+4)Query selector 
+1. document.querySelector("id/class/tag")
+2.document.querySelectorAll("id/class/tag")
+
+properties:-
+1.tagName : returns tag for element nodes
+2.innerText : returns the text content of the element and all its children
+3.innerHtml : returns the plain text or HTML contents in the element
+4.textContent : returns textual content even for ghidden elements
+

@@ -81,10 +81,10 @@
         });
 
         var T1 = team;
-        T1.teamName = "Mumbai Indians";
+        T1.teamName = prompt("Enter your team name");
         T1.matches = 14;
-        T1.winMatches = 5;
-        T1.lossMatches = 2;
+        T1.winMatches = prompt("Enter Win Matches");
+        T1.lossMatches = T1.matches-T1.lossMatches;
         T1.poitns = T1.winMatches * 2;
         T1.final = true;
 

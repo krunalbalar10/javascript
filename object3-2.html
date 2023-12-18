@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col-12">
+                <div class="card shadow">
+                    <div class="card-header">
+                        <h4>
+                            Add Student
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <form method="post" action="" onsubmit="return Save();">
+                            <div class="row">
+                                <div class="col">
+                                    <label for="name" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="name" required />
+                                </div>
+                                <div class="col">
+                                    <label for="age" class="form-label">Age</label>
+                                    <input type="number" class="form-control" id="age" required />
+                                </div>
+                                <div class="col">
+                                    <label for="weight" class="form-label">Weight</label>
+                                    <input type="number" class="form-control" id="weight" required />
+                                </div>
+                                <div class="col">
+                                    <p>Gender</p>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="gender" id="male"
+                                            value="male" required>
+                                        <label class="form-check-label" for="male">Male</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="gender" id="female"
+                                            value="female" required>
+                                        <label class="form-check-label" for="female">Female</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <p></p>
+                                    <input type="submit" class="btn btn-danger mt-2" id="save"  name="submit"
+                                        value="Add Student" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-12">
+
+                <div class="card shadow">
+                    <div class="card-header">
+                        <h4>Students</h4>
+                    </div>
+                    <div class="card-body">
+                        <table width="100%" class="table table-bordered table-striped" border="1" align="center"
+                            cellpadding="10">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Age</th>
+                                    <th>Weight</th>
+                                    <th>Gender</th>
+                                </tr>
+                            </thead>
+                            <tbody id="output">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="common.js"></script>
+    <script>
+        let Save = function () {
+            //var object-variable-name = Object 
+            var name = $("name").value;
+            var weight = $("weight").value;
+            var age = $("age").value;
+            var gender = document.querySelector("input[name='gender']:checked").value;
+            var g1 = new Student(name,age,weight,gender);
+            //set properties using object variable name
+            //call method using object variable name 
+            g1.display();
+            return false;
+        }
+        //3rd method to create object
+        function Student(name, age, weight, gender) {
+            this.name = name,
+                this.age = age,
+                this.weight = weight,
+                this.gender = gender,
+                this.display = function () {
+                var tr = ` <tr>
+                <td>${this.name}</td>
+                <td>${this.age}</td>
+                <td>${this.weight}</td>
+                <td>${this.gender}</td>
+            </tr>`;
+                    $('output').innerHTML += tr;
+                }
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

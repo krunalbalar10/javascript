@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>3rd method to create object</h1>
+                <hr />
+                <b>use console, press (ctrl+shift+k)</b>
+                <table class="table table-bordered mt-5" border="2" align="center" cellpadding="10" width="100%">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Weight</th>
+                            <th>Gender</th>
+                        </tr>
+                    </thead>
+                    <tbody id="output">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <script>
+        function student(name, age, weight, gender) {
+            this.name = name,
+                this.age = age,
+                this.weight = weight,
+                this.gender = gender,
+
+                this.display = function () {
+                    console.log("Name = " + this.name + " Age =" + this.age + " Weight =" + this.weight + " Gender=",
+                        (this.gender == false) ? "female" : "male")
+                }
+            let temp;
+            if (this.gender == false)
+                temp = 'Female';
+
+            else
+                temp = 'Male';
+
+            var tr = ` <tr>
+                             <td>${this.name}</td>
+                             <td>${this.age}</td>
+                             <td>${this.weight}</td>
+                             <td>${temp}</td>
+                            </tr>`;
+
+            document.getElementById("output").innerHTML += tr;
+        }
+
+        var g1 = new student("Krunal", 23, 55, true);
+        g1.display();
+
+        var g2 = new student("Bhakti", 25, 50, false);
+        g2.display();
+    </script>
+
+</body>
+
+</htl>

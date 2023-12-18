@@ -97,3 +97,23 @@ properties:-
 3.innerHtml : returns the plain text or HTML contents in the element
 4.textContent : returns textual content even for ghidden elements
 
+
+Attributes:
+1. getAttribute(attr) => to get the attribute value 
+
+let p = document.querySelector("p")
+console.log(p);
+
+2. setAttribute(attr , value) => to set the attribute value
+
+Style:
+
+node.Style => you can change the property of tag by below method without using css
+
+let div = document.querySelector("div");
+div.style.backgroundColor = "green";
+
+
+
+
+

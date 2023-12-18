@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 200px;
+            border: 2 px solid black;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        this is a div
+        <ul>
+            <li>item1</li>
+            <li>item2</li>
+            <li>item3</li>
+        </ul>
+    </div>
+    <p class="para">
+        this is a simple line
+    </p>
+    <script>
+        let newBtn = document.createElement("button");
+        newBtn.innerText = "click me";
+        console.log(newBtn);
+
+        // insert element
+        // type 1
+        // node.append() adds at the end of node(inside)
+        // let div = document.querySelector("div");
+        // div.append(newBtn);
+
+        // type 2 - node.prepend() => add at the start of node(inside)
+        let div = document.querySelector("div");
+        div.prepend(newBtn);
+
+        // type-3
+        // node.before
+
+        // type- 4
+        // node.after()
+    </script>
+</body>
+</html>

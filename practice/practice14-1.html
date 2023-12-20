@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inline event handling</title>
+    <style>
+        div{
+            margin-top: 20px;
+            height: 100px;
+            width: 100px;
+            background-color: dodgerblue;
+            color: white;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="console.log('button was clicked');alert('hello!')">
+        click me!
+    </button>
+
+    <button ondblclick="console.log('button was clicked 2 time');">
+        click me 2 time!
+    </button>
+
+    <div onmouseover="console.log('You are inside div');">
+        this is a box
+    </div>
+    <script>
+
+    </script>
+</body>
+</html>

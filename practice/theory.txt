@@ -112,7 +112,24 @@ node.Style => you can change the property of tag by below method without using c
 
 let div = document.querySelector("div");
 div.style.backgroundColor = "green";
+-------------------------------------------------------------------------------------------
 
+Events in JS
+
+=> The change in the state of an object is known as an Events
+mouse Events
+keyboard Events
+form Events
+print events
+
+event object in JS => It is a special object that has details about the event and all event
+                      handlers have access to the event object's properties and methods.
+
+Event listeners in JS :
+
+node.addEventListener(event , callback)
+
+node.removeEventListener(event , callback)
 
 
 

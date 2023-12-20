@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>java script event handling</title>
+    <style>
+        div {
+            margin-top: 20px;
+            height: 100px;
+            width: 100px;
+            background-color: dodgerblue;
+            color: white;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn1">
+        btn1
+    </button>
+
+    <button ondblclick="console.log('button was clicked 2 time');">
+        click me 2 time!
+    </button>
+
+    <div>
+        this is a box
+    </div>
+
+
+    <script>
+        let btn1 = document.querySelector("#btn1");
+
+        btn1.addEventListener("click" , () => {
+            console.log("You have clicked the HANDLER1");
+        });
+
+        btn1.addEventListener("click" , () => {
+            console.log("You have clicked the HANDLER2");
+        });
+
+        const handler3 = () => {
+            console.log("It is HANDLER3");
+        }
+
+        btn1.addEventListener("click" , handler3);
+
+        btn1.addEventListener("click" , () => {
+            console.log("You have clicked the HANDLER4");
+        });
+
+        btn1.removeEventListener("click" , handler3);
+
+
+    </script>
+</body>
+
+</html>

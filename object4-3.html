@@ -64,6 +64,7 @@
                                     <th>Price</th>
                                     <th>Quantity</th>
                                     <th>Total</th>
+                                    <th>Delete</th>
                                 </tr>
                             </thead>
                             <tbody id="output">
@@ -92,6 +93,11 @@
                 $("total").value = "";
             }
 
+        }
+
+        let deleteItem = function(deleteButton){
+            console.log(deleteButton);
+            deleteButton.parentNode.parentNode.remove();
         }
         let addList = function () {
             let name = document.getElementById("name").value;
@@ -129,6 +135,7 @@
                                        <td>${this.price}</td>
                                        <td>${this.quantity}</td>
                                        <td>${this.total}</td>
+                                       <td><button onclick='deleteItem(this);' type='button' class='btn btn-danger'>Delete</button></td>
                                    </tr>`;
 
                 document.getElementById("output").innerHTML += addItem;

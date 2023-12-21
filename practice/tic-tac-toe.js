@@ -67,9 +67,9 @@ const checkWinner = () => {
 
         // console.log(pattern[0] , pattern[1] , pattern[2]);
         // console.log(
-        //     boxes[pattern[0]].innerHTML,
-        //     boxes[pattern[1]].innerHTML,
-        //     boxes[pattern[2]].innerHTML
+        //     boxes[pattern[0]].innerText,
+        //     boxes[pattern[1]].innerText,
+        //     boxes[pattern[2]].innerText
         // );
         let pos1val = boxes[pattern[0]].innerText;
         let pos2val = boxes[pattern[1]].innerText;

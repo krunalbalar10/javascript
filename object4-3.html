@@ -95,8 +95,15 @@
 
         }
 
-        let deleteItem = function(deleteButton){
+        let deleteItem = function (deleteButton) {
             console.log(deleteButton);
+            let total = deleteButton.parentNode.parentNode.children[3].innerHTML;
+            billTotal -= parseInt(total);
+            itemCount--;
+
+            document.getElementById("count").innerHTML = itemCount;
+            document.getElementById("billtotal").innerHTML = billTotal;
+            
             deleteButton.parentNode.parentNode.remove();
         }
         let addList = function () {
@@ -104,7 +111,7 @@
             let price = document.getElementById("price").value;
             let quantity = document.getElementById("quantity").value;
             console.log(name, price, quantity);
-            let item1 = new item(name, price, quantity);    
+            let item1 = new item(name, price, quantity);
             item1.display();
 
             return false;

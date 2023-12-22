@@ -13,6 +13,8 @@
     <p id="output2"></p>
     <br>
     <p id="output3"></p>
+    <br>
+    <p id="output4"></p>
     <script>
         //multilevel inheritance
         class KB
@@ -61,18 +63,35 @@
 
         }
 
+        class TB extends GB
+        {
+            constructor(bytes)
+            {
+                super(bytes);
+                console.log("TB constructor is called");
+            }
+
+            getTB()
+            {
+                let temp = super.getGB() / 1021;
+                return temp;
+            }
+        }
+
 
         let bytes = parseInt(prompt("Enter memory in bytes"));
         //create MB class object
         //let object-name = new classname()
-        let m1 = new GB(bytes);
+        let m1 = new TB(bytes);
         let kilobytes = m1.getKB();
         let megabytes = m1.getMB();
         let gigabytes = m1.getGB();
+        let terabytes = m1.getTB();
         
         document.getElementById("output1").innerHTML = "KB = " + kilobytes;
         document.getElementById("output2").innerHTML = "MB = " + megabytes;
         document.getElementById("output3").innerHTML = "GB = " + gigabytes;
+        document.getElementById("output4").innerHTML = "TB = " + terabytes;
 
 
     </script>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Example of Inheritance</h1>
+    <hr>
+    <p id="output1"></p>
+    <br>
+    <p id="output2"></p>
+    <script>
+        //single level inheritance
+        class KB
+        {
+            constructor(bytes)
+            {
+                this.bytes = bytes;
+                console.log("KB constructor is called"); 
+            }
+
+            getKB()
+            {
+                let temp = this.bytes / 1024;
+                return temp;
+            }
+        }
+
+        class MB extends KB
+        {
+            constructor(bytes)
+            {
+                super(bytes);
+                console.log("MB constructor is called");
+            }
+
+            getMB()
+            {
+                let temp = super.getKB() / 1024;
+                return temp;
+            }
+        }
+
+        let bytes = parseInt(prompt("Enter memory in bytes"));
+
+        let m1 = new MB(bytes);
+        let kilobytes = m1.getKB();
+        let megabytes = m1.getMB();
+        
+        document.getElementById("output1").innerHTML = "KB = " + kilobytes;
+        document.getElementById("output2").innerHTML = "MB = " + megabytes;
+
+
+    </script>
+</body>
+</html>

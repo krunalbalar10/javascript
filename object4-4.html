@@ -26,13 +26,11 @@
                                 </div>
                                 <div class="col-2">
                                     <label for="price" class="form-label">Product Price</label>
-                                    <input type="number" class="form-control" id="price" name="price"
-                                        onblur="setTotal();" required>
+                                    <input type="number" class="form-control" id="price" name="price" required>
                                 </div>
                                 <div class="col-2">
                                     <label for="quantity" class="form-label">Quantity</label>
-                                    <input type="number" class="form-control" id="quantity" name="quantity"
-                                        onblur="setTotal();" required>
+                                    <input type="number" class="form-control" id="quantity" name="quantity" required>
                                 </div>
                                 <div class="col-2">
                                     <label for="total" class="form-label">Total</label>
@@ -64,7 +62,7 @@
                                     <th>Price</th>
                                     <th>Quantity</th>
                                     <th>Total</th>
-                                    <th>Delete</th>
+                                    <th>Edit</th>
                                 </tr>
                             </thead>
                             <tbody id="output">
@@ -83,7 +81,58 @@
     <script src="common.js"></script>
 
     <script>
-              
+
+        let editItem = () => {
+            document.getElementById("name").value = "";
+            document.getElementById("price").value = "";
+            document.getElementById("quantity").value = "";
+            console.log("edititem isc called")
+            document.getElementById("output").innerHTML 
+
+        }
+
+        let addList = function () {
+            let name = document.getElementById("name").value;
+            let price = document.getElementById("price").value;
+            let quantity = document.getElementById("quantity").value;
+            let total = price * quantity;
+            console.log(name, price, quantity, total);
+            document.getElementById("total").value = total;
+
+            let i1 = new item(name, price, quantity, total);
+            i1.display();
+
+            return false;
+        }
+
+        class item {
+            constructor(name, price, quantity) {
+                this.name = name;
+                this.price = price;
+                this.quantity = quantity;
+                this.total = this.price * this.quantity;
+
+                console.log("constructor is called");
+            }
+
+            display() {
+                console.log(this.name, this, price, this.quantity, this.total);
+
+                let addItem = `<tr>
+                                       <td>${this.name}</td>
+                                       <td>${this.price}</td>
+                                       <td>${this.quantity}</td>
+                                       <td>${this.total}</td>
+                                       <td><button onclick='editItem(this);' type='button' class='btn btn-danger'>Edit</button></td>
+                                </tr>`;
+
+                document.getElementById("output").innerHTML += addItem;
+
+            }
+        }
+
+
+
     </script>
 </body>
 

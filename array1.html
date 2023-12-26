@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Array in javascript
+    </h1>
+
+    <script>
+
+        function display(array)
+        {
+            console.log(array);
+        }
+        // Numeric Array
+        var numbers = [20, 50, 100, 10, 18];
+
+        // String Array
+        var fruits = ["banana" , "strawberry" , "mango" , "kiwi"];
+
+        display(numbers);
+        display(fruits);
+
+        // create an empty array
+        var countries = [];
+        display(countries);
+
+        // method for adding new value at the end of array
+        countries.push("India");
+        countries.push("America");
+        countries.push("Russia");
+        display(countries);
+
+        //add new value at the begining of the array
+        countries.unshift("Brazil");
+        countries.unshift("Germany");
+        display(countries);
+
+        //REMOVE TWO VALUE FROM THE BEGINING
+        countries.splice(0,2);
+        display(countries);
+
+        // sorting
+        countries.sort();
+        display(countries);
+
+        numbers.sort(function(previous , next){
+            return previous - next;
+        });
+
+        display(numbers);
+
+        // reverse
+        numbers.reverse();
+        display(numbers);
+
+        // change value
+        countries[0] = "Brazil";
+        display(countries);
+
+        // create an empty array
+        var square = [];
+        // using loop
+        for(let index = 0; index < numbers.length; index++)
+        {
+            console.log(index , numbers[index]);
+            square.push(numbers[index] * numbers[index]);
+
+        }
+        display(square);
+
+        // generate qube
+        var qube = numbers.map(function(num){
+            return num * num * num;
+        });
+        display(qube);
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>multilevel inheritance</h1>
+    <h4 id="output1"></h4>
+    <h4 id="output2"></h4>
+
+    <script>
+        class KG
+        {
+            constructor(gm)
+            {
+                this.gm = gm;
+                console.log("gm constructor is called");
+            }
+
+            getKG()
+            {
+                let temp = this.gm / 1000;
+                return temp;
+            }
+        }
+
+        class TON extends KG
+        {
+            constructor(gm)
+            {
+                super(gm);
+                console.log("TON contructor is called");
+            }
+
+            getTON()
+            {
+                let temp = super.getKG() / 1000;
+                return temp; 
+            }
+        }
+
+        let GM = parseInt(prompt("Enter weight in gram"));
+
+        let v1 = new TON(GM);
+        let kilogram = v1.getKG();
+        let tonne = v1.getTON();
+        
+        document.getElementById("output1").innerHTML = `Kilogram = ${kilogram}`;
+        document.getElementById("output2").innerHTML = `Tonne = ${tonne}`;
+
+    </script>
+</body>
+</html>

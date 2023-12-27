@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Student Table</title>
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <h2>Student Information</h2>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr class="bg-warning">
+                            <th>Student Name</th>
+                            <th>Subject 1</th>
+                            <th>Subject 2</th>
+                            <th>Subject 3</th>
+                            <th>Subject 4</th>
+                            <th>Subject 5</th>
+                            <th>Total Marks</th>
+                            <th>Average Marks</th>
+                        </tr>
+                    </thead>
+                    <tbody id="output">
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+
+       function displayStudent(mark){
+        let list = document.createElement('tr');
+        
+        let total = mark.subject1 + mark.subject2 + mark.subject3 + mark.subject4 + mark.subject5
+        let average = total / 5;
+            list.innerHTML = `
+                            <td>${mark.name}</td>
+                            <td>${mark.subject1}</td>
+                            <td>${mark.subject2}</td>
+                            <td>${mark.subject3}</td>
+                            <td>${mark.subject4}</td>
+                            <td>${mark.subject5}</td>
+                            <td>${total}</td>
+                            <td>${average}</td>
+                        `;
+
+            document.getElementById("output").appendChild(list);
+       }
+
+        var students = [
+            {
+                name: "Student 1",
+                subject1: 85, 
+                subject2: 90,
+                subject3: 78,
+                subject4: 92,
+                subject5: 88
+            },
+            {
+                name: "Student 2",
+                subject1: 78, 
+                subject2: 97,
+                subject3: 77,
+                subject4: 89,
+                subject5: 69
+            },
+            {
+                name: "Student 3",
+                subject1: 67, 
+                subject2: 90,
+                subject3: 79,
+                subject4: 92,
+                subject5: 77
+            },
+            {
+                name: "Student 4",
+                subject1: 85, 
+                subject2: 83,
+                subject3: 92,
+                subject4: 73,
+                subject5: 91
+            },
+            {
+                name: "Student 5",
+                subject1: 95, 
+                subject2: 72,
+                subject3: 82,
+                subject4: 76,
+                subject5: 90
+            },
+            {
+                name: "Student 6",
+                subject1: 88, 
+                subject2: 90,
+                subject3: 69,
+                subject4: 72,
+                subject5: 87
+            },
+            
+        ];
+
+        console.log(students);
+
+        students.map(function(mark){
+            displayStudent(mark);
+        });
+
+
+    </script>
+
+</body>
+
+</html>

@@ -20,3 +20,25 @@ display card for each multiplication table. display 4 such card for large screen
 
 create object 2nd method that store ipl team name, no of match, wins, loss, point 
 create objects to display all time as table 
+
+5) create class KG which return Kilogram of grams given in constructor and
+ it has method getKG which return KG. extends this class in Ton. 
+ which has method getTon that returns ton of grams given in constructor.
+
+6) create class meter which has gtMeter which return meter of inches given in constructor.
+ extends this class in KM. which has method getKM that returns km of inches given in constructor. 
+ extends KM class in Mile class which has method getMile that return miles of inches given in constructor
+
+7) create example that will display all country name along with their capital name
+ in individual card (display 4 card per line) using concept of array. run loop over array. 
+
+8) create example that will display IPL point table in table tag using concept of array. 
+run loop over array 
+
+9) create webpage that will display 10 students' 5 subject marks, total, average. 
+create an array of object. each object has student name and 5 subject marks.
+ display each and every student detail in table format. refer array41_2.html for detail 
+
+10) create webpage that display 10 products using responsive design and card.
+each product has name, photo, price, discounted price. display each and every product detail in above format. 
+refer array41_2.html for detail 

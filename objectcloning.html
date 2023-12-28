@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Object cloning</h1>
+    <hr/>
+    <b>use console</b>
+    <script>
+        let object1 = {
+            name: 'Tata',
+            seat: 5,
+            engine: 'EV'
+        };
+
+        //object cloning
+        let object2 = {};
+        for (let key in object1)
+        {
+            object2[key] = object1[key]
+        }
+
+        console.log("before change" , object1 , object2);
+        
+        object1.name = 'Audi';
+        object2.engine = 'Diesel';
+        console.log("after change" , object1 , object2);
+    </script>
+</body>
+</html>

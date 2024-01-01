@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Bootstrap 5 Form</title>
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="card">
+                    <div class="card-header text-bg-primary">
+                        <h2 class="card-title ">working with cookies</h2>
+                    </div>
+                    <div class="card-body">
+                        <form onsubmit="return SaveCookie();">
+                            <div class="mb-3">
+                                <label for="keyName" class="form-label">Key Name</label>
+                                <input type="text" class="form-control" id="keyname" placeholder="Enter Key Name"
+                                    required />
+                            </div>
+                            <div class="mb-3">
+                                <label for="keyValue" class="form-label">Key Value</label>
+                                <input type="text" class="form-control" id="keyvalue" placeholder="Enter Key Value"
+                                    required />
+                            </div>
+                            <button type="submit" class="btn btn-primary">Create/update cookies</button>
+                            <button onclick="FetchCookie();" type="button" class="btn btn-info">fetch cookies</button>
+                            <button onclick="DeleteCookie();" type="button" class="btn btn-warning">delete
+                                cookies</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="common.js"></script>
+    <script src="coockies.js"></script>
+    <script>
+        let SaveCookie = () => {
+            let keyname = document.getElementById("keyname").value;
+            let keyvalue = document.getElementById("keyvalue").value;
+            console.log(keyname, keyvalue);
+
+            setCookie(keyname, keyvalue);
+
+            document.getElementById("keyname").value = '';
+            document.getElementById("keyvalue").value = '';
+            alert("cookies created/updated");
+            return false;
+        }
+
+        let FetchCookie = function () {
+            let keyname = document.getElementById("keyname").value;
+            if (keyname === '') {
+                alert('Keyname can not be empty');
+            }
+            else {
+                let value = getCookie(keyname);
+                if (value === '') {
+                    alert('No such cookies');
+                }
+                else {
+                    document.getElementById("keyvalue").value = value;
+                }
+            }
+        }
+
+        function DeleteCookie() {
+            let keyname = document.getElementById("keyname").value;
+            if (keyname === '') {
+                alert('Keyname can not be empty');
+            }
+            else {
+                let value = getCookie(keyname);
+                if (value === '') {
+                    alert('No such cookies');
+                }
+                else {
+                    //delete
+                    setCookie(keyname , '' , -1);
+                    alert("cookies has been deleted");
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

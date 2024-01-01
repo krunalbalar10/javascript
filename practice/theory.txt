@@ -131,6 +131,17 @@ node.addEventListener(event , callback)
 
 node.removeEventListener(event , callback)
 
+---------------------------------------------------------------------------------------------
+
+classes and objects in javascript
+__________________________________
+ JS object have special property called prototype.
+
+ super keyword => is used to call the constructor of its parent class to access the parents properties and methods.
+
+ inheritance => is passing down properties and methods from parent class to child class
+
+
 
 
 

@@ -1,13 +1,10 @@
 const BASE_URL = "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies";
 
 const dropdown = document.querySelectorAll(".drop-down select");
-
 const btn = document.querySelector("button");
-
 const fromCurr = document.querySelector(".from select");
 const toCurr = document.querySelector(".to select");
-
-let i= 0;
+const msg = document.querySelector(".msg");
 
 //First step
 for (let select of dropdown) {
@@ -29,21 +26,10 @@ for (let select of dropdown) {
     select.addEventListener("change" , (evt) => {
         updateFlag(evt.target);
     });
-}
-
-//third step
-const updateFlag = (element) => {
-    let currCode = element.value;
-    console.log(currCode);
-    let countryCode = countryList[currCode];
-    let newSrc = `https://flagsapi.com/${countryCode}/flat/64.png`;
-    let img = element.parentElement.querySelector("img");
-    img.src = newSrc;
 };
 
-//fouth step
-btn.addEventListener("click", async (evt) => {
-    evt.preventDefault();
+//sixth step
+const updateExchangeRate = async () => {
     //using this method preventDefault() it wil do.... not refresh page when you click on the button
     let amount = document.querySelector(".amount input");
     let amtVal = amount.value;
@@ -58,8 +44,35 @@ btn.addEventListener("click", async (evt) => {
 //fifth step
     const URL = `${BASE_URL}/${fromCurr.value.toLowerCase()}/${toCurr.value.toLowerCase()}.json`;
     let response = await fetch(URL);
-    console.log(response)
+    // console.log(response)
     let data = await response.json();
+    // console.log(data);
+    let rate = data[toCurr.value.toLowerCase()];
+    console.log(rate);
 
-    console.log(data);
+    let finalAmount = amtVal * rate;
+    // msg.innerText = `1USD = 83INR`;
+
+    msg.innerText = `${amtVal} ${fromCurr.value} = ${finalAmount} ${toCurr.value}`;
+};
+
+//third step
+const updateFlag = (element) => {
+    let currCode = element.value; // INR , USD
+    console.log(currCode);  
+    let countryCode = countryList[currCode]; // IN , EU , US
+    let newSrc = `https://flagsapi.com/${countryCode}/flat/64.png`;
+    let img = element.parentElement.querySelector("img");
+    img.src = newSrc;
+};
+
+//fourth step
+btn.addEventListener("click", (evt) => {
+    evt.preventDefault();
+    updateExchangeRate();
+});
+
+//sixth step
+window.addEventListener("load" , () => {
+    updateExchangeRate();
 });

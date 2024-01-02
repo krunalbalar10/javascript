@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>3rd method to create object</h1>
+    <table width="100%" border="1" cellpadding="10">
+        <thead>
+            <form method="post" onsubmit="return AddProduct();"></form>
+            <tr>
+                <td>
+                    <input type="text" name="productname" id="productname" placeholder="Product name" required="">
+                </td>
+                <td>
+                    <input type="number" name="productprice" id="productprice" placeholder="product price" required="">
+                </td>
+                <td>
+                    <input type="number" name="productweight" id="productweight" placeholder="product weight"
+                        required="">
+                </td>
+                <td colspan="2" align="center">
+                    <input type="submit" name="submit" id="submit" value="Add Product">
+                </td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Weight</th>
+                <th>Price per gram</th>
+                <th>Action</th>
+            </tr>
+
+        </thead>
+        <tbody id="output">
+
+           
+        </tbody>
+    </table>
+    <script>
+        var count = 1; //global variable
+        var ActiveRow = null;
+        //create object using 3rd method 
+        function Product(name, price, weight) {
+            //property variables 
+            this.name = name,
+                this.price = price,
+                this.weight = weight,
+                this.per_gram_price = (this.price / this.weight).toFixed(2),
+                this.log = function () {
+                    console.log(this.name, this.price, this.weight, this.per_gram_price);
+                },
+                this.display = function () {
+                    document.getElementById("output").innerHTML += `<tr id='tr-${count}'><td>${this.name}</td><td>${this.price}</td><td>${this.weight}</td><td>${this.per_gram_price}</td><td><button  type='button' 
+                        onclick="DeleteProduct('tr-${count}')">Delete</button><button type='button' onclick='EditProduct(this);'>Edit</button></td></tr>`;
+                    count = count + 1;
+                }
+        }
+        AddProduct = function () {
+            //create 3 variables
+            var productname = document.getElementById("productname").value;
+            var productprice = document.getElementById("productprice").value;
+            var productweight = document.getElementById("productweight").value;
+            console.log(productname, productprice, productweight);
+
+            //create object variable 
+            //var object-variable = new Object-name();
+            if (document.getElementById("submit").value === "Add Product") {
+                var p1 = new Product(productname, productprice, productweight);
+                p1.display();
+            }
+            else {
+                document.getElementById(ActiveRow).cells[0].innerHTML = productname;
+                document.getElementById(ActiveRow).cells[1].innerHTML = productprice;
+                document.getElementById(ActiveRow).cells[2].innerHTML = productweight;
+                document.getElementById("submit").value = "Add Product";
+            }
+            //clear all textbox
+            document.getElementById("productname").value = "";
+            document.getElementById("productprice").value = "";
+            document.getElementById("productweight").value = "";
+            return false;
+        }
+
+        let DeleteProduct = (TrId) => {
+            //alert('delete button clicked' + TrId);
+            document.getElementById(TrId).remove();
+        }
+
+        let EditProduct = (button) => {
+            //alert("Edit button clicked ");
+            console.log(button);
+            let tr = button.parentNode.parentNode;
+            ActiveRow = tr.getAttribute("id");
+            console.log(ActiveRow);
+            let productname = tr.cells[0].innerHTML;
+            let productprice = tr.cells[1].innerHTML;
+            let productweight = tr.cells[2].innerHTML;
+            console.log(productname, productprice, productweight);
+            document.getElementById("productname").value = productname;
+            document.getElementById("productprice").value = productprice;
+            document.getElementById("productweight").value = productweight;
+            document.getElementById("submit").value = "Save Changes";
+        }
+    </script>
+
+
+</body>
+
+</html>

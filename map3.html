@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+
+    <style>
+        #map {
+            height: 300px;
+            width: 100%;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>detect user location</h1>
+    <button id="btnuserlocation" type="button" name="btnlocation" onclick="getlocation();">get my location </button>
+    <hr />
+    <h2 id="location"></h2>
+    <div id="map"></div>
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+    <script>
+        var btnuserlocation = document.getElementById("btnuserlocation");
+        btnuserlocation.onclick = function () {
+            navigator.geolocation.getCurrentPosition(UserLocationRecieved)
+        }
+        function UserLocationRecieved(location)
+        {
+            console.log(location);
+            let latitude = location.coords.latitude;
+            let longitude = location.coords.longitude;
+            console.log(latitude,longitude);
+            document.getElementById('location').innerHTML = `latitude = ${latitude} longitude = ${longitude}`;
+            var mapOptions = {
+                center: [latitude,longitude],
+                zoom: 12
+            }
+            var map = new L.map('map', mapOptions);
+            // Creating a Layer object
+            var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+            // Adding layer to the map
+            map.addLayer(layer);
+
+            let iconOptions = {
+                draggable:false,
+            }
+            let marker1 = new L.Marker([latitude,longitude],iconOptions);
+            marker1.addTo(map);
+            let marker2 = new L.Marker([23.23082, 72.67399],iconOptions);
+            marker2.addTo(map);
+        }
+    </script>
+</body>
+
+</html>

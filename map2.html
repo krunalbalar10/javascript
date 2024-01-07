@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>detect user location</h1>
+    <button type="button" name="btnlocation" onclick="getLocation();">get my location </button>
+    <hr/>
+    <h2 id="map"></h2>
+    <script>
+        var map = document.getElementById("map");
+        function getLocation(){
+            navigator.geolocation.getCurrentPosition(showPosition);
+        }
+
+        function showPosition(location){
+            map.innerHTML = "latitude = " + location.coords.latitude + "longitude = " + location.coords.longitude;
+        }
+    </script>
+</body>
+
+</html>

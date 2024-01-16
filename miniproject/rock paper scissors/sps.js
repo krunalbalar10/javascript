@@ -15,6 +15,7 @@ const genCompChoice = () => {
     // math.random used for taking any number if you want specific range then you
     //have to use * 3 will give you 0 to 2 number .here you can multiply any number 
     const randIdx = Math.floor(Math.random() * 3);
+    // console.log(randIdx);
     return option[randIdx];
     //rock , paper , scissors
 }

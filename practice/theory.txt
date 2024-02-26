@@ -141,6 +141,15 @@ __________________________________
 
  inheritance => is passing down properties and methods from parent class to child class
 
+ ------------------------------------------------------------------------------------------------
+
+ callback function => is function passed as an argument to another function
+ callback hell
+
+ promise(resolve , reject)
+
+ async-await
+
 
 
 
